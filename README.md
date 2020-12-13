@@ -1,5 +1,6 @@
 # HIPS--
 A Home Information and Protection System developed for CSC 535 Software Engineering
+
 Sean Clayton, William Maroney, Archie Sawmadal, and Robert Van Zandt
 
 ## Requirements
