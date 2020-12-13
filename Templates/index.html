@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flask login{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+	<h1>Hello, {% if current_user.is_authenticated %}{{ current_user.id }}{% else %}Stranger{% endif %}!</h1>
+</div>
+
+{{ wtf.quick_form(form) }}
+<iframe src="67.186.129.52:8081" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+{% endblock %}

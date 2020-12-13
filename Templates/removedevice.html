@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Remove Device{% endblock %}
+
+{% block page_content %}
+	<div class="page-header">
+		<h1>Remove Device</h1>
+	</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}

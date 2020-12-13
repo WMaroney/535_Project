@@ -1,0 +1,131 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Flask Login Test{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/card.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+				</div>
+				<div class="navbar-collapse collapse">
+
+						<ul class="nav navbar-nav">
+
+							<li><a href="/about">
+								<button type="button" class="btn btn-info">
+									About
+									<span class="glyphicon glyphicon-asterisk"></span> </button></a>
+							</li>
+
+
+						<ul class="nav navbar-nav navbar-right">
+							{% if current_user.is_anonymous %}
+								<li>
+									<a href="/login">
+										<button type="button" class="btn btn-success">
+											<span class="glyphicon glyphicon-log-in"></span> Login
+										</button>
+									</a>
+								</li>
+
+							{% else %}
+						
+							
+		         			<li>
+								<a href="/index">
+									<button type="button" class="btn btn-success">
+										<span class="glyphicon glyphicon-home"></span> Home
+									</button>
+								</a>
+							</li>
+							<li>
+									<a href="/adddevice">
+										<button type="button" class="btn btn-primary">
+											<span class="glyphicon glyphicon-plus"></span> Add A Device
+										</button>
+									</a>
+							</li>
+							<li>
+									<a href="/removedevice">
+										<button type="button" class="btn btn-warning">
+											<span class="glyphicon glyphicon-remove"></span> Remove Device
+										</button>
+									</a>
+							</li>
+							<li>
+								<a href="/logout">
+									<button type="button" class="btn btn-danger">
+										<span class="glyphicon glyphicon-log-out"></span> Logout
+									</button>
+								</a>
+							</li>
+							{% endif %}
+			  
+						</ul>
+
+
+				</div>
+		</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+{% with errors = get_flashed_messages(category_filter=["error"]) %}
+{% if errors %}
+<div class="alert alert-danger alert-dismissible">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	<ul>
+		{%- for msg in errors %}
+		<li>{{ msg }}</li>
+		{% endfor -%}
+	</ul>
+</div>
+{% endif %}
+{% endwith %}
+{% with errors = get_flashed_messages(category_filter=["success"]) %}
+{% if errors %}
+<div class="alert alert-success alert-dismissible">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	<ul>
+		{%- for msg in errors %}
+		<li>{{ msg }}</li>
+		{% endfor -%}
+	</ul>
+</div>
+{% endif %}
+{% endwith %}
+{% with errors = get_flashed_messages(category_filter=["info"]) %}
+{% if errors %}
+<div class="alert alert-info alert-dismissible">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	<ul>
+		{%- for msg in errors %}
+		<li>{{ msg }}</li>
+		{% endfor -%}
+	</ul>
+</div>
+{% endif %}
+{% endwith %}
+		{% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
