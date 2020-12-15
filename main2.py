@@ -41,7 +41,12 @@ def executeScriptsFromFile(filename):
 		except (IOError):
 			print ("Command skipped: ")
 	db.commit()
-			
+	
+## TO RUN Existing SQL Code (Change directory)
+		
+## Uncomment the following statement and change the directory to match your directory.
+#executeScriptsFromFile('/Users/williamm1978/Desktop/Project_535/HIPS_tables.sql')
+		
 
 ## FLASK FORMS subclassed from FlaskForm
 
