@@ -22,7 +22,7 @@ This database and website is being developed for a graduate level project for CS
 - [x] Able to login
 - [x] Able to sign up
 - [x] Display Devices on Index
-- [x] Display iframe on Index
+- [ ] Display iframe on Index
 - [x] Add Devices
 - [x] Search Devices
 - [x] Remove Devices
