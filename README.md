@@ -14,7 +14,7 @@ Sean Clayton, William Maroney, Archie Sawmadal, and Robert Van Zandt
 
 ## Description
 
-This database and website is being developed for a graduate level project for CSC 535 Software Enginnering. The database preloaded 4 users and 2 devices.
+This database and website is being developed for a graduate level project for CSC 535 Software Enginnering. The database has been pre-loaded with 4 users and 2 devices.
 
 ## Where are we in development?
 
