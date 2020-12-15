@@ -35,8 +35,8 @@ This database and website is being developed for a graduate level project for CS
 	- Files
 		- main2.py (main program)
 		- HIPS_tables.sql (SQL script to build database and tables)
-		- README.md
-		- rqs.txt (requirements)
+		- README.md (readme to run the program)
+		- requirements.txt (requirements)
 
 ## To Run the Application
 
